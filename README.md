@@ -2,11 +2,11 @@
 
 Téma – NBA Playoffs 2026
 Mapa Stránek:
-• Home
-• O nás
-• Playoffs
+### Home
+### O nás
+### Playoffs
 o East
-o West
+o West <br>
 ### Týmy
 o OKC
 o Suns
@@ -23,10 +23,10 @@ o Raptors
 o Knicks
 o Hawks
 o Celtics
-o 76ers
-• Blog
+o 76ers <br>
+### Blog 
 o Články 1, 2…
-• Kontakt
+### Kontakt
 o Formulář
 (Není to finalní projekt, něco z toho se může ještě změnit ale bude 
 to na podobné bázi :)
