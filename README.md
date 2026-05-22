@@ -28,5 +28,3 @@ o 76ers <br>
 o Články 1, 2… <br>
 ### Kontakt
 o Formulář <br>
-(Není to finalní projekt, něco z toho se může ještě změnit ale bude 
-to na podobné bázi :)
