@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA PLAYOFFS 2026 | KONTAKT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-background text-on-background">
+
+    <!-- Header -->
+    <header class="header fixed top-0 w-full glass-card" style="border-radius: 0; z-index: 100;">
+        <div class="container">
+            <div class="logo">NBA PLAYOFFS 2026</div>
+            <nav class="hidden md-flex nav-links-wrapper">
+                <a href="index.html" class="nav-link">DOMŮ</a>
+                <a href="onas.html" class="nav-link">O NÁS</a>
+                <a href="playoffs.html" class="nav-link">PLAYOFFS</a>
+                <a href="tymy.html" class="nav-link">TÝMY</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="kontakt.html" class="nav-link active">KONTAKT</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="material-symbols-outlined">notifications</button>
+                <button class="material-symbols-outlined">account_circle</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDZisqfWj5qCiI7unjuH7MZP8O0Rv2AszF5PF04n5jL7EGEt0F7YpoT7C4G65IlmvC56e2CHO_3QLRXL6u4C3lNoJZon99PSJlp1rPmtDC1TjxpsqlHX2SZshSSNhxB7KD1aVY-mov68_V2QKBtReGCEfx9fH4wd65PFZWwUoVZM37cbCDpuleH9WgtA2oooEwaAFm4HCYnKc70JETDEMqDC-B2Takqqk3PtNrRSyJAPQ1LNF-c0nT-EY99isjYUfcdruo04JxjZI"
+                alt="Arena" class="contact-hero-img">
+            <div class="contact-hero-overlay"></div>
+            <div class="container reveal" style="position: relative; z-index: 10;">
+                <span class="skew-edge"
+                    style="background: var(--secondary-container); color: white; padding: 4px 16px; font-family: var(--font-headline); font-size: 14px; margin-bottom: 24px; display: inline-block;">BUĎTE
+                    U TOHO</span>
+                <h1 class="display-xl" style="font-size: clamp(48px, 10vw, 80px); line-height: 1; margin-bottom: 24px;">
+                    KONTAKTUJTE <br><span class="text-primary italic">VEDENÍ</span>
+                </h1>
+                <p class="body-lg text-on-surface-variant max-w-xl">
+                    Ať už hledáte prémiové vstupenky na play-off, mediální akreditace nebo máte obecné dotazy k finále
+                    2026, náš tým je připraven vám pomoci.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <section class="container reveal"
+            style="margin-top: -100px; padding-bottom: 100px; position: relative; z-index: 20;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; align-items: start;">
+                <!-- Form Column -->
+                <div class="contact-form-card">
+                    <form action="potvrzeni.html" method="GET" onsubmit="window.location.href='potvrzeni.html'; return false;" class="space-y-8">
+
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                            <div class="form-group">
+                                <label class="form-label">Celé jméno</label>
+                                <input type="text" name="name" class="form-input" placeholder="Jan Novák" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">E-mailová adresa</label>
+                                <input type="email" name="email" class="form-input" placeholder="novak@nba-playoffs.cz" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Předmět dotazu</label>
+                            <select name="subject" class="form-input"
+                                style="background: var(--surface-container-low); border-radius: 0;">
+                                <option value="tickets">VSTUPENKY A POHOSTINSTVÍ</option>
+                                <option value="media">MÉDIA A VZTAHY S VEŘEJNOSTÍ</option>
+                                <option value="general">OBECNÉ INFORMACE</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Zpráva</label>
+                            <textarea name="message" class="form-input" placeholder="Jak vám můžeme pomoci s přípravou na finále?"
+                                required rows="4" style="resize: none;"></textarea>
+                        </div>
+                        <button type="submit" class="preview-buy-btn"
+                            style="width: auto; padding: 16px 48px; font-size: 16px; background: var(--secondary-container); color: white;">
+                            ODESLAT ZPRÁVU <span class="material-symbols-outlined"
+                                style="vertical-align: middle; margin-left: 8px;">send</span>
+                        </button>
+                    </form>
+                </div>
+
+
+                <!-- Info Column -->
+                <div style="display: flex; flex-direction: column; gap: 32px;">
+                    <div class="glass-card info-card">
+                        <h3 class="headline-md mb-6 uppercase">Centrála</h3>
+                        <div style="display: flex; flex-direction: column; gap: 24px;">
+                            <div style="display: flex; gap: 16px;">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                                <div>
+                                    <p class="label-bold text-primary uppercase" style="font-size: 10px;">Adresa
+                                        kanceláře</p>
+                                    <p class="body-md text-on-surface-variant">Vídeňská, Brno<br>Česká republika</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 16px;">
+                                <span class="material-symbols-outlined text-primary">call</span>
+                                <div>
+                                    <p class="label-bold text-primary uppercase" style="font-size: 10px;">Telefonní
+                                        číslo</p>
+                                    <p class="body-md text-on-surface-variant">+420 739 172 104</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 16px;">
+                                <span class="material-symbols-outlined text-primary">mail</span>
+                                <div>
+                                    <p class="label-bold text-primary uppercase" style="font-size: 10px;">E-mailová
+                                        podpora</p>
+                                    <p class="body-md text-on-surface-variant">czplayoffs@nba.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="glass-card map-card">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh3Agx3OgbaqXgJpQ6kpS9Js3IlAxaY1MFMd3EKQR5mdGzYuVoaliKhQhpVSYKmeBIwa_jfAClEMdY6OaqlupmN-bV5bgSaqfIS-xoks0AKPzWj1THlHDQG01uo1Gu-w_hS4sM0kmkI0E8qMtkGzX-ruRWhE76IMaqH9vvGansyqDTU9vgty37e-nCdg1Ea-VAvJnQgfmxcmS-IusQ5NPAONWKxA95pqF4GbuvTc8iStSerEFwdZq0CUr0zStvF228nlTu4UMkbHM"
+                            alt="Map">
+                        <div
+                            style="position: absolute; bottom: 16px; left: 16px; background: rgba(18,20,20,0.9); padding: 8px 16px; border-left: 2px solid var(--secondary);">
+                            <p class="label-bold uppercase" style="font-size: 10px; letter-spacing: 2px;">Globální
+                                centrum</p>
+                        </div>
+                    </div>
+
+                    <!-- Socials -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <a href="https://x.com/NBA" target="_blank" rel="noopener noreferrer" class="glass-card"
+                            style="padding: 16px; text-align: center; text-decoration: none; color: white; transition: 0.3s;"
+                            onmouseover="this.style.background='var(--secondary-container)'"
+                            onmouseout="this.style.background='rgba(30, 32, 32, 0.7)'">
+                            <span class="label-bold uppercase">Twitter</span>
+                        </a>
+                        <a href="https://www.instagram.com/nba/?hl=cs" target="_blank" rel="noopener noreferrer"
+                            class="glass-card"
+                            style="padding: 16px; text-align: center; text-decoration: none; color: white; transition: 0.3s;"
+                            onmouseover="this.style.background='var(--secondary-container)'"
+                            onmouseout="this.style.background='rgba(30, 32, 32, 0.7)'">
+                            <span class="label-bold uppercase">Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Bento -->
+        <section class="bg-surface-container-low">
+            <div class="container reveal">
+                <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 48px; padding-top: 64px;">
+                    <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+                    <h2 class="headline-md uppercase">Rychlá podpora</h2>
+                    <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+                </div>
+                <div class="support-bento">
+                    <div class="support-item">
+                        <span class="material-symbols-outlined text-secondary"
+                            style="font-size: 40px; margin-bottom: 16px;">confirmation_number</span>
+                        <h4 class="label-bold uppercase text-white mb-2">Ztracená vstupenka?</h4>
+                        <p class="body-md text-on-surface-variant">Zkontrolujte svou aplikaci NBA ID pro digitální
+                            obnovení nebo navštivte pokladnu arény.</p>
+                    </div>
+                    <div class="support-item">
+                        <span class="material-symbols-outlined text-secondary"
+                            style="font-size: 40px; margin-bottom: 16px;">videocam</span>
+                        <h4 class="label-bold uppercase text-white mb-2">Novinářský průkaz</h4>
+                        <p class="body-md text-on-surface-variant">Žádosti o akreditaci musí být podány nejpozději 7 dní
+                            před zápasem.</p>
+                    </div>
+                    <div class="support-item" style="border-right: none;">
+                        <span class="material-symbols-outlined text-secondary"
+                            style="font-size: 40px; margin-bottom: 16px;">groups</span>
+                        <h4 class="label-bold uppercase text-white mb-2">Skupinový prodej</h4>
+                        <p class="body-md text-on-surface-variant">Plánujete firemní výlet? Náš poradce zajistí
+                            rezervace pro 15 a více osob.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-wrap">
+            <div class="headline-md text-outline">NBA 2026</div>
+            <div class="footer-links">
+                <a href="" class="footer-link">OCHRANA SOUKROMÍ</a>
+                <a href="" class="footer-link">PODMÍNKY UŽITÍ</a>
+                <a href="" class="footer-link">MOŽNOSTI REKLAMY</a>
+                <a href="" class="footer-link">MAPA STRÁNEK</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 NBA PROPERTIES, INC. VŠECHNA PRÁVA VYHRAZENA.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAY-OFF NBA 2026 - Boston Celtics</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header fixed top-0 w-full glass-card"
+        style="border-radius: 0; border-top: 0; border-left: 0; border-right: 0; z-index: 100;">
+        <div class="container">
+            <div class="logo">
+                NBA PLAYOFFS 2026
+            </div>
+
+            <nav class="hidden md-flex nav-links-wrapper">
+                <a href="index.html" class="nav-link">Domů</a>
+                <a href="onas.html" class="nav-link">O nás</a>
+                <a href="playoffs.html" class="nav-link">Playoffs</a>
+                <a href="tymy.html" class="nav-link active">Týmy</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="material-symbols-outlined">notifications</button>
+                <button class="material-symbols-outlined">account_circle</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="celtics-hero">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu-Py8gudus9dS6BrNdPNQJVSaQf7RwEkY3PxDbytUjJuvO-XMnGbvoTx6bTtPWwNRD8e7-qxcGN0zm_Bwb2_mGZ2p38ATyZmpHn6uiCMaa80s-ch18LpQovR4ZWlE8fvhKfnneWEGOjaDA9n5K_RcH_yK3QR6cVjUJFxYRbhMm7sESCob8TYuI3uxIYqMAVg0yEeIpQEtfJnWjd-XZZk1rtv6ucRwichSGNI2lEKNho0SofC9Qky3rc7PfL_vQ-6aga-EleVi-QE"
+                alt="TD Garden" class="hero-img" style="opacity: 0.3;">
+            <div class="hero-overlay"
+                style="background: linear-gradient(to top, var(--background) 0%, rgba(18, 20, 20, 0.4) 100%);"></div>
+
+            <div class="container relative">
+                <div class="flex flex-col md-flex-row items-end gap-8">
+                    <div class="logo-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg" alt="Celtics Logo"
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="hero-info" style="padding-bottom: 32px;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="bg-celtics text-white px-3 py-1 rounded label-bold">#1 NASAZENÝ VÝCHODNÍ
+                                KONFERENCE</span>
+                            <span class="text-outline label-bold">ZAL. 1946</span>
+                        </div>
+                        <h1 class="display-xl">BOSTON <span class="text-celtics">CELTICS</span></h1>
+
+                        <div class="flex gap-12 mt-8">
+                            <div>
+                                <p class="label-bold text-outline">BILANCE</p>
+                                <p class="stats-number">64-18</p>
+                            </div>
+                            <div>
+                                <p class="label-bold text-outline">DOMA</p>
+                                <p class="stats-number">37-4</p>
+                            </div>
+                            <div>
+                                <p class="label-bold text-outline">SÉRIE</p>
+                                <p class="stats-number text-celtics">10 V</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Section -->
+        <section class="container mb-20">
+            <div class="game-layout" style="grid-template-columns: 1fr; gap: 24px;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 24px;" class="md-grid-2-1">
+                    <!-- Featured Player Card -->
+                    <div class="player-featured-card glass-card">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/dfb0b6130123619.61795f517d223.png"
+                            alt="Jayson Tatum">
+                        <div class="overlay">
+                            <span class="text-celtics label-bold mb-2 block">KLÍČOVÝ HRÁČ FRANŠÍZY</span>
+                            <h2 class="headline-lg">JAYSON<br>TATUM</h2>
+                            <div class="flex gap-4 mt-8">
+                                <div class="glass-card" style="padding: 16px; border-left: 4px solid var(--celtics-green);">
+                                    <p class="text-outline label-bold" style="font-size: 10px;">BODY NA ZÁPAS</p>
+                                    <p class="stats-number">26.9</p>
+                                </div>
+                                <div class="glass-card" style="padding: 16px; border-left: 4px solid var(--celtics-green);">
+                                    <p class="text-outline label-bold" style="font-size: 10px;">DOSKOKY</p>
+                                    <p class="stats-number">8.1</p>
+                                </div>
+                                <div class="glass-card" style="padding: 16px; border-left: 4px solid var(--celtics-green);">
+                                    <p class="text-outline label-bold" style="font-size: 10px;">ASISTENCE</p>
+                                    <p class="stats-number">4.9</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Leaders -->
+                    <div class="glass-card" style="padding: 32px; display: flex; flex-direction: column;">
+                        <h3 class="headline-md mb-8 italic">LÍDŘI TÝMU</h3>
+                        <div class="leaders-list flex-1">
+                            <div class="leader-item">
+                                <div class="flex items-center gap-4">
+                                    <span class="headline-md text-outline" style="font-size: 20px;">01</span>
+                                    <div>
+                                        <p class="label-bold">JAYLEN BROWN</p>
+                                        <p class="text-outline" style="font-size: 10px;">BODY / 23.0 PPG</p>
+                                    </div>
+                                </div>
+                                <span class="material-symbols-outlined text-celtics">trending_up</span>
+                            </div>
+                            <div class="leader-item">
+                                <div class="flex items-center gap-4">
+                                    <span class="headline-md text-outline" style="font-size: 20px;">02</span>
+                                    <div>
+                                        <p class="label-bold">KRISTAPS PORZINGIS</p>
+                                        <p class="text-outline" style="font-size: 10px;">BLOKY / 1.9 BPG</p>
+                                    </div>
+                                </div>
+                                <span class="material-symbols-outlined text-celtics">shield</span>
+                            </div>
+                            <div class="leader-item">
+                                <div class="flex items-center gap-4">
+                                    <span class="headline-md text-outline" style="font-size: 20px;">03</span>
+                                    <div>
+                                        <p class="label-bold">DERRICK WHITE</p>
+                                        <p class="text-outline" style="font-size: 10px;">ASISTENCE / 5.2 APG</p>
+                                    </div>
+                                </div>
+                                <span class="material-symbols-outlined text-celtics">moving</span>
+                            </div>
+                        </div>
+                        <button class="btn bg-celtics text-white label-bold w-full mt-8"
+                            style="font-size: 14px; padding: 16px; border-bottom: 4px solid var(--celtics-green-dark);">ZOBRAZIT
+                            CELOU SOUPISKU</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playoff Schedule -->
+        <section class="container mb-20">
+            <div class="flex flex-col md-flex-row gap-12">
+                <div class="md-w-1-3">
+                    <h2 class="headline-md italic mb-4">ROZPIS PLAY-OFF</h2>
+                    <p class="text-on-surface-variant">Cesta za 19. bannerem pokračuje. 1. kolo play-off NBA 2026 začíná
+                        v TD Garden.</p>
+                </div>
+                <div class="md-w-2-3 grid md-grid-2 gap-4">
+                    <div class="glass-card schedule-card">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="label-bold text-outline" style="font-size: 10px;">ZÁPAS 1 • 1. KOLO VÝCHOD</span>
+                            <span class="text-celtics label-bold" style="font-size: 10px;">DOMA</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="flex items-center gap-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg" alt="BOS"
+                                    style="width: 40px; height: 40px;">
+                                <span class="headline-md">BOS</span>
+                            </div>
+                            <span class="label-bold text-outline">VS</span>
+                            <div class="flex items-center gap-3">
+                                <span class="headline-md">MIA</span>
+                                <div
+                                    style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <span class="material-symbols-outlined text-outline"
+                                        style="font-size: 20px;">help</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="label-bold text-outline" style="font-size: 10px;">18. DUBNA 2026</p>
+                                <p class="headline-md">20:30 EST</p>
+                            </div>
+                            <a href="vstupenky.html" class="btn btn-outline"
+                                style="padding: 8px 24px; font-size: 12px; border-color: var(--celtics-green); color: var(--celtics-green); text-decoration: none;">VSTUPENKY</a>
+
+                        </div>
+                    </div>
+
+                    <div class="glass-card schedule-card" style="opacity: 0.6;">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="label-bold text-outline" style="font-size: 10px;">ZÁPAS 2 • 1. KOLO VÝCHOD</span>
+                            <span class="text-celtics label-bold" style="font-size: 10px;">DOMA</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="flex items-center gap-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg" alt="BOS"
+                                    style="width: 40px; height: 40px;">
+                                <span class="headline-md">BOS</span>
+                            </div>
+                            <span class="label-bold text-outline">VS</span>
+                            <div class="flex items-center gap-3">
+                                <span class="headline-md">MIA</span>
+                                <div
+                                    style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <span class="material-symbols-outlined text-outline"
+                                        style="font-size: 20px;">help</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="label-bold text-outline" style="font-size: 10px;">20. DUBNA 2026</p>
+                                <p class="headline-md">19:00 EST</p>
+                            </div>
+                            <a href="vstupenky.html" class="btn btn-outline"
+                                style="padding: 8px 24px; font-size: 12px; border-color: var(--outline); color: var(--outline); text-decoration: none;">PŘEDPRODEJ</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Stats -->
+        <section class="container mb-20">
+            <h3 class="headline-md italic mb-8 border-bottom" style="padding-bottom: 16px;">VÝKONNOSTNÍ METRIKY TÝMU</h3>
+            <div class="grid md-grid-4 gap-6">
+                <div class="glass-card metric-card">
+                    <p class="label-bold text-outline mb-2" style="font-size: 10px;">OFENZIVNÍ RTG</p>
+                    <p class="display-xl" style="font-size: 64px;">122.2</p>
+                    <p class="text-celtics label-bold" style="font-size: 10px;">POŘADÍ: 1.</p>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <p class="label-bold text-outline mb-2" style="font-size: 10px;">DEFENZIVNÍ RTG</p>
+                    <p class="display-xl" style="font-size: 64px;">110.6</p>
+                    <p class="text-celtics label-bold" style="font-size: 10px;">POŘADÍ: 2.</p>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 92%;"></div>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <p class="label-bold text-outline mb-2" style="font-size: 10px;">3PT %</p>
+                    <p class="display-xl" style="font-size: 64px;">38.8</p>
+                    <p class="text-celtics label-bold" style="font-size: 10px;">POŘADÍ: 1.</p>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 88%;"></div>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <p class="label-bold text-outline mb-2" style="font-size: 10px;">NET RATING</p>
+                    <p class="display-xl" style="font-size: 64px;">+11.6</p>
+                    <p class="text-celtics label-bold" style="font-size: 10px;">NEJVYŠŠÍ V LIZE</p>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 100%; box-shadow: 0 0 10px var(--celtics-green);"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-wrap">
+            <div class="headline-md text-outline">VLASTNICTVÍ NBA</div>
+            <div class="footer-links">
+                <a href="" class="footer-link">OCHRANA SOUKROMÍ</a>
+                <a href="" class="footer-link">PODMÍNKY UŽITÍ</a>
+                <a href="" class="footer-link">MOŽNOSTI REKLAMY</a>
+                <a href="" class="footer-link">MAPA STRÁNEK</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 NBA PROPERTIES, INC. VŠECHNA PRÁVA VYHRAZENA.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+</body>
+
+</html>

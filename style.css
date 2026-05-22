@@ -1,0 +1,1672 @@
+/* ==========================================
+   PROMĚNNÉ A DESIGN SYSTÉM
+   Definuje barvy, písma a rozměry používané napříč celým webem.
+   ========================================== */
+:root {
+    /* Hlavní barvy (Primary & Secondary) */
+    --primary: #aac7ff;
+    --on-primary: #073061;
+    --primary-container: #002b5c;
+    --on-primary-container: #7594cb;
+
+    --secondary: #ffb3ae;
+    --on-secondary: #68000c;
+    --secondary-container: #a4031a;
+    --on-secondary-container: #ffaea8;
+
+    --tertiary: #bec8ce;
+    --on-tertiary: #283237;
+
+    /* Barvy povrchů a pozadí (Dark Mode) */
+    --background: #121414;
+    --on-background: #e2e2e2;
+
+    --surface: #121414;
+    --on-surface: #e2e2e2;
+    --surface-variant: #333535;
+    --on-surface-variant: #c4c6d0;
+
+    --surface-container-lowest: #0c0f0f;
+    --surface-container-low: #1a1c1c;
+    --surface-container: #1e2020;
+    --surface-container-high: #282a2b;
+    --surface-container-highest: #333535;
+
+    /* Odsazení a layout */
+    --outline: #8d909a;
+    --outline-variant: rgba(67, 71, 79, 0.2);
+
+    --gutter: 24px;
+    --margin-desktop: 64px;
+    --margin-mobile: 20px;
+    --container-max: 1440px;
+
+    /* Typografie */
+    --font-headline: 'Anton', sans-serif;
+    --font-body: 'Lexend', sans-serif;
+}
+
+/* ==========================================
+   ZÁKLADNÍ RESET A NASTAVENÍ
+   Odstraňuje výchozí styly prohlížeče a nastavuje základní vzhled.
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--on-surface);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ==========================================
+   ZÁKLADNÍ KOMPONENTY
+   Opakovaně použitelné prvky jako kontejnery a skleněné efekty.
+   ========================================== */
+
+/* Centrální kontejner pro omezení šířky obsahu */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+/* Karta s efektem rozmazaného skla (Glassmorphism) */
+.glass-card {
+    background: rgba(30, 32, 32, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+/* Efekt zkosené hrany pro tlačítka a odznaky */
+.skew-edge {
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+/* Animovaný kinetický okraj (spodní linka) */
+.kinetic-border {
+    position: relative;
+}
+
+.kinetic-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+}
+
+
+/* ==========================================
+   TYPOGRAFIE (PÍSMA)
+   Definuje velikosti a styly nadpisů a textů.
+   ========================================== */
+
+/* Extra velký nadpis pro Hero sekce */
+.display-xl {
+    font-family: var(--font-headline);
+    font-size: clamp(60px, 10vw, 80px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+/* Hlavní nadpisy sekcí */
+.headline-lg {
+    font-family: var(--font-headline);
+    font-size: clamp(36px, 6vw, 48px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+/* Středně velké nadpisy (karty, podnadpisy) */
+.headline-md {
+    font-family: var(--font-headline);
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+/* Číselné statistiky */
+.stats-number {
+    font-family: var(--font-headline);
+    font-size: 32px;
+    line-height: 1;
+}
+
+/* Tučné štítky (label) */
+.label-bold {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   HLAVIČKA A NAVIGACE
+   Hlavní horní menu webu.
+   ========================================== */
+.header {
+    height: 80px;
+    background: rgba(18, 20, 20, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+.header .container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    height: 100%;
+    max-width: 100%;
+    padding: 0 40px;
+}
+
+.logo {
+    font-family: var(--font-headline);
+    font-size: 24px;
+    font-style: italic;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+}
+
+.nav-links-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--on-surface);
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.nav-link.active {
+    color: var(--secondary);
+    border-bottom: 2px solid var(--secondary);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-actions button {
+    color: var(--primary);
+    font-size: 24px;
+}
+
+/* ==========================================
+   HERO SEKCE (ÚVODNÍ BANNER)
+   Hlavní vizuální prvek na začátku stránek.
+   ========================================== */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%; /* Extra height for parallax */
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--background) 10%, transparent 60%);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+}
+
+.hero-desc {
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--on-surface-variant);
+    margin-bottom: 32px;
+    border-left: 3px solid var(--secondary);
+    padding-left: 20px;
+}
+
+.nav-link:hover:not(.active) {
+    color: var(--primary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-actions button {
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.nav-actions button:hover {
+    color: var(--primary);
+}
+
+/* Ticker */
+.ticker {
+    height: 48px;
+    background: var(--surface-container-lowest);
+    border-bottom: 1px solid var(--outline-variant);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 12px;
+    white-space: nowrap;
+}
+
+.live-badge {
+    background: rgba(164, 3, 26, 0.2);
+    border: 1px solid rgba(255, 179, 174, 0.3);
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+/* Hero */
+.hero {
+    min-height: 716px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--margin-desktop);
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    mix-blend-mode: luminosity;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--background) 0%, rgba(18, 20, 20, 0.6) 60%, transparent 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 768px;
+}
+
+.hero h1 span.glow {
+    color: var(--primary);
+    text-shadow: 0 0 15px rgba(170, 199, 255, 0.4);
+}
+
+.hero-desc {
+    font-size: 18px;
+    color: var(--on-surface-variant);
+    border-left: 4px solid var(--secondary);
+    padding-left: 24px;
+    margin: 32px 0;
+    max-width: 576px;
+}
+
+.btn {
+    padding: 16px 40px;
+    font-family: var(--font-headline);
+    font-size: 24px;
+    text-transform: uppercase;
+    font-style: italic;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--secondary-container);
+    border-bottom: 2px solid var(--secondary);
+    box-shadow: 0 10px 20px rgba(164, 3, 26, 0.3);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    border: 1px solid var(--outline-variant);
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+    background: var(--surface-variant);
+}
+
+/* Sections */
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+}
+
+.section-title h2 {
+    color: var(--primary);
+}
+
+.section-title .divider {
+    width: 96px;
+    height: 4px;
+    background: var(--secondary);
+    margin-top: 8px;
+}
+
+/* ==========================================
+   SEKCE ZÁPASŮ (GAME CARDS)
+   Styly pro karty s aktuálními výsledky a skóre.
+   ========================================== */
+.game-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 64px;
+}
+
+@media (min-width: 1024px) {
+    .game-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.main-game-card {
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.team img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 16px;
+}
+
+.team:hover img {
+    transform: scale(1.1);
+}
+
+.score-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-wrap {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.score-main {
+    font-family: var(--font-headline);
+    font-size: clamp(48px, 6vw, 64px);
+}
+
+.score-sep {
+    font-family: var(--font-headline);
+    font-size: clamp(60px, 8vw, 80px);
+    color: var(--outline);
+}
+
+.game-status-pill {
+    background: var(--surface-container-highest);
+    padding: 8px 24px;
+    border-radius: 999px;
+    border: 1px solid var(--outline-variant);
+}
+
+.game-stats-footer {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--outline-variant);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    text-align: center;
+}
+
+.stat-item p:first-child {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin-bottom: 4px;
+}
+
+.stat-item p:last-child {
+    font-weight: 700;
+}
+
+/* Sidebar Cards */
+.sidebar-card {
+    padding: 24px;
+}
+
+.matchup-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.matchup-item img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+}
+
+.matchup-item:nth-child(3) img {
+    border-color: var(--secondary);
+}
+
+.stat-group {
+    margin-left: auto;
+    text-align: right;
+}
+
+.stat-group .val {
+    font-family: var(--font-headline);
+    font-size: 24px;
+}
+
+.stat-group .unit {
+    font-size: 10px;
+    color: var(--outline);
+    text-transform: uppercase;
+}
+
+.poll-item {
+    margin-top: 12px;
+}
+
+.poll-option {
+    position: relative;
+    height: 40px;
+    background: var(--surface-container);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.poll-fill {
+    position: absolute;
+    height: 100%;
+    transition: 0.3s;
+    opacity: 0.4;
+}
+
+.poll-option:hover .poll-fill {
+    opacity: 0.6;
+}
+
+.poll-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    pointer-events: none;
+}
+
+/* Brackets */
+.bracket-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: var(--margin-desktop);
+}
+
+@media (min-width: 768px) {
+    .bracket-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.bracket-box {
+    height: 256px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.bracket-box img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s;
+}
+
+.bracket-box:hover img {
+    transform: scale(1.05);
+}
+
+.bracket-box-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, var(--background) 0%, transparent 100%);
+}
+
+.bracket-box-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 32px;
+}
+
+/* Bento News */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 300px);
+    }
+
+    .bento-main {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .bento-wide {
+        grid-column: span 2;
+    }
+}
+
+.bento-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.bento-item.glass-card {
+    background: rgba(30, 32, 32, 0.7);
+}
+
+.bento-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s;
+}
+
+.bento-main:hover img {
+    transform: scale(1.1);
+}
+
+.bento-main-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+.bento-main-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 32px;
+}
+
+.bento-side {
+    border-left-width: 4px;
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.bento-side:hover {
+    background: var(--surface-variant);
+}
+
+.bento-wide {
+    display: flex;
+}
+
+.bento-wide .thumb {
+    width: 33.33%;
+    height: 100%;
+}
+
+.bento-wide .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bento-wide .info {
+    width: 66.66%;
+    padding: 24px;
+}
+
+/* Utility & Misc */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.md-hidden {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .md-hidden {
+        display: none;
+    }
+}
+
+/* Footer */
+.footer {
+    padding: 64px 0;
+    border-top: 4px solid var(--secondary-container);
+    background: var(--surface-container-lowest);
+    width: 100%;
+}
+
+.footer-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .footer-wrap {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.footer-link {
+    color: var(--on-surface-variant);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--primary);
+}
+
+.footer-copy {
+    color: var(--on-surface-variant);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+}
+
+/* About Us Specific Styles */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.kinetic-slant {
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.text-glow-red {
+    text-shadow: 0 0 15px rgba(164, 3, 26, 0.6);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 24px;
+    padding-left: 24px;
+    border-left: 4px solid var(--outline);
+    transition: 0.3s;
+}
+
+.timeline-item.active {
+    border-left-color: var(--secondary-container);
+}
+
+.leader-img-wrap {
+    position: relative;
+    height: 384px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border-left: 4px solid var(--outline);
+}
+
+.leader-img-wrap.active {
+    border-left-color: var(--secondary);
+}
+
+.leader-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.group:hover .leader-img-wrap img {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+/* Playoffs Specific Styles */
+.bracket-line {
+    background: linear-gradient(90deg, transparent, var(--outline), transparent);
+}
+
+.sheared-accent {
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.bracket-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+@media (min-width: 1280px) {
+    .bracket-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+    }
+}
+
+.bracket-column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.bracket-card {
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    min-height: 160px;
+}
+
+.bracket-card:hover {
+    transform: translateY(-5px);
+}
+
+.bracket-card::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 96px;
+    background: linear-gradient(90deg, transparent, rgba(170, 199, 255, 0.05));
+    pointer-events: none;
+}
+
+.finals-card {
+    position: relative;
+    z-index: 20;
+    border-top: 4px solid var(--secondary);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    background: var(--surface-container);
+}
+
+.fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: var(--primary);
+    color: var(--on-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 50;
+    transition: 0.3s;
+}
+
+.fab:active {
+    transform: scale(0.9);
+}
+
+@media (min-width: 768px) {
+    .fab {
+        display: none;
+    }
+}
+
+/* Perfect Alignment Fixes */
+.bracket-column-west {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.bracket-column-east {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.bracket-card-east .team-row {
+    flex-direction: row-reverse;
+}
+
+.bracket-card-east .team-info {
+    flex-direction: row-reverse;
+}
+
+/* Teams Page Styles */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.team-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(170, 199, 255, 0.3);
+    transform: translateY(-8px);
+}
+
+.team-rank-badge {
+    background: var(--primary-container);
+    color: var(--on-primary-container);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-bottom: 24px;
+}
+
+.team-logo-wrap {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-logo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.5s;
+}
+
+.team-card:hover .team-logo-wrap img {
+    transform: scale(1.1);
+}
+
+.team-btn {
+    width: 100%;
+    background: var(--secondary-container);
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    font-family: var(--font-headline);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-style: italic;
+    border-bottom: 2px solid var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.team-btn:hover {
+    background: var(--on-secondary-fixed-variant);
+}
+
+/* Blog Styles */
+.blog-hero {
+    position: relative;
+    padding: 48px;
+    background: rgba(30, 32, 32, 0.4);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 48px;
+    overflow: hidden;
+}
+
+.blog-hero::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: var(--secondary-container);
+    filter: blur(80px);
+    opacity: 0.1;
+}
+
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 12px 32px;
+    font-family: var(--font-headline);
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border: 1px solid var(--outline-variant);
+    color: var(--on-surface);
+}
+
+.filter-btn.active {
+    background: var(--secondary-container);
+    border-color: var(--secondary);
+    color: white;
+}
+
+.filter-btn:hover:not(.active) {
+    background: var(--surface-container-high);
+}
+
+.featured-article {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+@media (min-width: 1024px) {
+    .featured-article {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.featured-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s;
+}
+
+.featured-card:hover img {
+    transform: scale(1.05);
+}
+
+.featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--background) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 64px;
+}
+
+.article-card {
+    border-bottom: 4px solid transparent;
+}
+
+.article-card:hover {
+    border-bottom-color: var(--secondary-container);
+}
+
+.article-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    position: relative;
+}
+
+.article-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.article-card:hover .article-thumb img {
+    transform: scale(1.1);
+}
+
+.newsletter-card {
+    background: var(--primary-container);
+    border: 2px dashed rgba(170, 199, 255, 0.3);
+    padding: 40px;
+    text-align: center;
+}
+
+.stats-widget {
+    border-left: 4px solid var(--secondary-container);
+    background: #121414 !important;
+    padding: 32px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-team-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 12px;
+}
+
+.progress-bar-wrap {
+    width: 100%;
+    height: 8px;
+    background: #333535;
+    margin: 24px 0 12px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--secondary-container);
+    box-shadow: 0 0 15px rgba(164, 3, 26, 0.5);
+    border-radius: 4px;
+}
+
+.preview-buy-btn {
+    width: 100%;
+    background: #282a2b;
+    color: var(--primary);
+    padding: 12px;
+    font-family: var(--font-headline);
+    font-size: 11px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+/* Contact Styles */
+.contact-hero {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.contact-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--background) 0%, transparent 100%);
+}
+
+.contact-form-card {
+    background: rgba(30, 32, 32, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 48px;
+    border-top: 4px solid var(--secondary);
+}
+
+.form-group {
+    margin-bottom: 32px;
+}
+
+.form-label {
+    display: block;
+    font-family: var(--font-headline);
+    font-size: 14px;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--outline-variant);
+    padding: 12px 0;
+    color: var(--on-surface);
+    font-family: var(--font-body);
+    transition: 0.3s;
+    outline: none;
+}
+
+.form-input:focus {
+    border-bottom-color: var(--secondary);
+}
+
+.info-card {
+    padding: 32px;
+    border-left: 4px solid var(--primary);
+}
+
+.map-card {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: 0.7s;
+}
+
+.map-card:hover img {
+    transform: scale(1.1);
+}
+
+.support-bento {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    padding: 64px 0;
+}
+
+.support-item {
+    padding: 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Tickets Page Styles */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 64px 0;
+}
+
+.pricing-card {
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    border-color: var(--primary) !important;
+    transform: translateY(-8px);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--secondary-container);
+    box-shadow: 0 0 30px rgba(164, 3, 26, 0.2);
+}
+
+.pricing-card.featured:hover {
+    box-shadow: 0 0 40px rgba(164, 3, 26, 0.4);
+}
+
+.arena-map-container {
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arena-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(170, 199, 255, 0.4);
+    }
+
+    70% {
+        transform: scale(1.5);
+        opacity: 0;
+        box-shadow: 0 0 0 20px rgba(170, 199, 255, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.hospitality-card {
+    height: 400px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.hospitality-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s;
+}
+
+.hospitality-card:hover img {
+    transform: scale(1.1);
+}
+
+.hospitality-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--surface) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+}
+
+/* --- Team Specific: Boston Celtics --- */
+:root {
+    --celtics-green: #007A33;
+    --celtics-green-dark: #00471B;
+}
+
+.text-celtics { color: var(--celtics-green); }
+.bg-celtics { background-color: var(--celtics-green); }
+
+.celtics-hero {
+    min-height: 614px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 64px;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-box {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 4px solid var(--celtics-green);
+    transform: rotate(-3deg);
+    box-shadow: 0 0 40px rgba(0, 122, 51, 0.4);
+    flex-shrink: 0;
+}
+
+.player-featured-card {
+    height: 500px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--outline-variant);
+}
+
+.player-featured-card .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--background) 10%, transparent 70%);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 2;
+}
+
+.player-featured-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    opacity: 0.8;
+}
+
+.leader-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--surface-container);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.leader-item:hover {
+    background: rgba(0, 122, 51, 0.1);
+    border-color: rgba(0, 122, 51, 0.3);
+}
+
+.schedule-card {
+    padding: 24px;
+    border-left: 4px solid var(--celtics-green);
+}
+
+.metric-card {
+    padding: 24px;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--surface-container);
+    margin-top: 16px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar .fill {
+    height: 100%;
+    background: var(--celtics-green);
+}
+
+/* --- Team Specific: OKC Thunder --- */
+:root {
+    --okc-blue: #007AC1;
+    --okc-orange: #EF3B24;
+}
+
+.text-okc-blue { color: var(--okc-blue); }
+.text-okc-orange { color: var(--okc-orange); }
+.bg-okc-blue { background-color: var(--okc-blue); }
+.bg-okc-orange { background-color: var(--okc-orange); }
+
+.okc-hero {
+    min-height: 500px;
+    padding-top: 140px;
+    padding-bottom: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.okc-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--background) 20%, rgba(18, 20, 20, 0.4) 100%);
+    z-index: 1;
+}
+
+.okc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--okc-blue);
+    color: white;
+    padding: 4px 16px;
+    border-radius: 999px;
+}
+
+.okc-player-spotlight {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .okc-player-spotlight {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.okc-stat-box {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.okc-roster-card {
+    padding: 24px;
+    border-left: 4px solid var(--okc-blue);
+    transition: 0.3s;
+}
+
+.okc-roster-card.orange {
+    border-left-color: var(--okc-orange);
+}
+
+.okc-roster-card:hover {
+    transform: translateY(-4px);
+    background: var(--surface-container-high);
+}
+
+.okc-schedule-card {
+    border-top: 4px solid var(--okc-blue);
+    padding: 24px;
+}
+
+/* --- Týmové Statistiky --- */
+.okc-stats-card {
+    border-top: 4px solid var(--okc-orange);
+    padding: 24px;
+}
+
+/* ==========================================
+   POMOCNÉ A ROZVRŽENÍ TŘÍDY (UTILITIES)
+   Tyto třídy pomáhají s rychlým stylováním 
+   přímo v HTML (flexbox, grid, marginy).
+   ========================================== */
+
+/* Flexbox pomocníci */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.justify-between { justify-content: space-between; }
+.flex-1 { flex: 1; }
+
+/* Grid pomocníci */
+.grid { display: grid; }
+
+/* Mezery (Gaps) */
+.gap-4 { gap: 16px; }
+.gap-6 { gap: 24px; }
+.gap-8 { gap: 32px; }
+.gap-12 { gap: 48px; }
+
+/* Odsazení (Margins) */
+.mb-1 { margin-bottom: 4px; }
+.mb-2 { margin-bottom: 8px; }
+.mb-4 { margin-bottom: 16px; }
+.mb-6 { margin-bottom: 24px; }
+.mb-8 { margin-bottom: 32px; }
+.mb-20 { margin-bottom: 80px; }
+.mt-6 { margin-top: 24px; }
+.mt-8 { margin-top: 32px; }
+.pt-4 { padding-top: 16px; }
+
+/* Ostatní pomocníci */
+.relative { position: relative; }
+.w-full { width: 100%; }
+.border-top { border-top: 1px solid rgba(255,255,255,0.1); }
+.border-bottom { border-bottom: 1px solid rgba(255,255,255,0.1); }
+.opacity-10 { opacity: 0.1; }
+.opacity-60 { opacity: 0.6; }
+
+/* Responzivní rozvržení (Tablety a větší) */
+@media (min-width: 768px) {
+    .md-flex-row { flex-direction: row; }
+    .md-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .md-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .md-grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .md-w-1-3 { width: 33.33%; }
+    .md-w-2-3 { width: 66.66%; }
+    .md-grid-2-1 { grid-template-columns: 2fr 1fr; }
+}

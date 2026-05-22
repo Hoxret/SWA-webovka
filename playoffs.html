@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA PLAYOFFS 2026 | PAVOUK</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        /* Specific Fixes for Alignment */
+        .playoffs-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1200px) {
+            .playoffs-grid {
+                grid-template-columns: 320px 1fr 320px;
+                gap: 60px;
+            }
+        }
+
+        .conference-header {
+            border-left: 2px solid var(--primary);
+            padding-left: 12px;
+            margin-bottom: 32px;
+        }
+
+        .conference-header.east {
+            border-left: 0;
+            border-right: 2px solid var(--secondary);
+            padding-left: 0;
+            padding-right: 12px;
+            text-align: right;
+        }
+
+        .bracket-card-new {
+            background: rgba(30, 32, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .bracket-card-new:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-row-new {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+        }
+
+        .team-row-new.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .team-identity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .team-identity.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .team-box {
+            width: 36px;
+            height: 36px;
+            background: var(--surface-container-highest);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Anton';
+            font-size: 14px;
+        }
+
+        .finals-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            padding-top: 80px;
+        }
+
+        .stats-bento {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 64px auto 0;
+        }
+
+        @media (min-width: 1024px) {
+            .stats-bento {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .player-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header fixed top-0 w-full glass-card" style="border-radius: 0; z-index: 100;">
+        <div class="container">
+            <div class="logo">NBA PLAYOFFS 2026</div>
+            <nav class="hidden md-flex nav-links-wrapper">
+                <a href="index.html" class="nav-link">DOMŮ</a>
+                <a href="onas.html" class="nav-link">O NÁS</a>
+                <a href="playoffs.html" class="nav-link active">PLAYOFFS</a>
+                <a href="tymy.html" class="nav-link">TÝMY</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="kontakt.html" class="nav-link">KONTAKT</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="material-symbols-outlined">notifications</button>
+                <button class="material-symbols-outlined">account_circle</button>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 120px; padding-bottom: 100px;">
+        <!-- Hero Section -->
+        <section class="container reveal" style="margin-bottom: 64px;">
+            <header style="border-left: 2px solid rgba(255,255,255,0.1); padding-left: 32px;">
+                <span class="label-bold"
+                    style="background: var(--secondary-container); color: var(--on-secondary-container); padding: 4px 16px; margin-bottom: 24px; display: inline-block; font-size: 10px; text-transform: uppercase; clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);">Živé
+                    aktualizace</span>
+                <h1 class="display-xl" style="font-size: clamp(48px, 10vw, 80px); line-height: 1; margin-bottom: 24px;">
+                    CESTA KE <span class="text-primary italic">SLÁVĚ</span>
+                </h1>
+                <p class="body-lg text-on-surface-variant max-w-2xl border-l-4 border-secondary-container pl-6 py-2">
+                    Staňte se svědky střetu titánů. Sledujte každou střelu, každou sérii a každý moment v boji o trofej
+                    Larryho O'Briena.
+                </p>
+            </header>
+        </section>
+
+        <!-- The Main Bracket Grid -->
+        <div class="playoffs-grid container">
+
+            <!-- WEST COLUMN -->
+            <div class="reveal">
+                <div class="conference-header">
+                    <h2 class="headline-md" style="font-size: 32px; font-style: italic;">ZÁPAD</h2>
+                    <p class="label-bold" style="color: var(--primary); font-size: 10px; text-transform: uppercase;">
+                        Konferenční Semifinále</p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 40px;">
+                    <!-- Game 1 -->
+                    <div class="bracket-card-new" style="border-left: 4px solid var(--primary);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
+                            <span class="label-bold"
+                                style="color: var(--outline); font-size: 10px; text-transform: uppercase;">Stav
+                                série</span>
+                            <span class="label-bold"
+                                style="background: var(--primary); color: var(--on-primary); padding: 2px 6px; border-radius: 4px; font-size: 10px;">ŽIVĚ</span>
+                        </div>
+                        <div class="team-row-new">
+                            <div class="team-identity">
+                                <div class="team-box" style="color: var(--primary);">OKC</div>
+                                <span class="label-bold" style="font-size: 12px;">OKC THUNDER</span>
+                            </div>
+                            <span class="stats-number" style="color: var(--primary); font-size: 24px;">3</span>
+                        </div>
+                        <div style="height: 1px; background: rgba(255,255,255,0.05); margin: 8px 0;"></div>
+                        <div class="team-row-new">
+                            <div class="team-identity">
+                                <div class="team-box">LAL</div>
+                                <span class="label-bold" style="font-size: 12px;">LA LAKERS</span>
+                            </div>
+                            <span class="stats-number" style="font-size: 24px;">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Game 2 -->
+                    <div class="bracket-card-new" style="border-left: 4px solid var(--outline);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
+                            <span class="label-bold"
+                                style="color: var(--outline); font-size: 10px; text-transform: uppercase;">Stav
+                                série</span>
+                            <span class="label-bold"
+                                style="color: var(--on-surface-variant); font-size: 10px;">KONEC</span>
+                        </div>
+                        <div class="team-row-new">
+                            <div class="team-identity">
+                                <div class="team-box">SAS</div>
+                                <span class="label-bold" style="font-size: 12px;">SAN ANTONIO SPURS</span>
+                            </div>
+                            <span class="stats-number" style="font-size: 24px;">2</span>
+                        </div>
+                        <div style="height: 1px; background: rgba(255,255,255,0.05); margin: 8px 0;"></div>
+                        <div class="team-row-new">
+                            <div class="team-identity">
+                                <div class="team-box">MIN</div>
+                                <span class="label-bold" style="font-size: 12px;">MN TIMBERWOLVES</span>
+                            </div>
+                            <span class="stats-number" style="font-size: 24px;">2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTER COLUMN (FINALS) -->
+            <div class="reveal finals-wrapper">
+                <div class="bracket-card-new" style="border-top: 3px solid var(--secondary); padding: 32px 24px;">
+                    <div style="text-align: center; margin-bottom: 24px;">
+                        <span class="label-bold" style="font-size: 10px; color: var(--outline);">FINÁLE NBA</span>
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-around; align-items: center; margin-bottom: 32px;">
+                        <div style="text-align: center;">
+                            <div
+                                style="width: 56px; height: 56px; background: var(--primary-container); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
+                                <span class="material-symbols-outlined" style="color: var(--primary);">stars</span>
+                            </div>
+                            <p class="label-bold" style="font-size: 8px;">VÍTĚZ ZÁPADU</p>
+                        </div>
+                        <div class="headline-md" style="font-style: italic; opacity: 0.2;">VS</div>
+                        <div style="text-align: center;">
+                            <div
+                                style="width: 56px; height: 56px; background: var(--secondary-container); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
+                                <span class="material-symbols-outlined" style="color: var(--secondary);">trophy</span>
+                            </div>
+                            <p class="label-bold" style="font-size: 8px;">VÍTĚZ VÝCHODU</p>
+                        </div>
+                    </div>
+                    <button class="sheared-accent"
+                        style="width: 100%; background: #ffdad7; color: #410005; padding: 14px; font-weight: 700; font-size: 12px; font-style: italic; border: none; cursor: pointer;">KDO
+                        MYSLÍTE, ŽE VYHRAJE?</button>
+                </div>
+            </div>
+
+            <!-- EAST COLUMN -->
+            <div class="reveal">
+                <div class="conference-header east">
+                    <h2 class="headline-md" style="font-size: 32px; font-style: italic;">VÝCHOD</h2>
+                    <p class="label-bold" style="color: var(--secondary); font-size: 10px; text-transform: uppercase;">
+                        Konferenční Semifinále</p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 40px;">
+                    <!-- Game 1 -->
+                    <div class="bracket-card-new" style="border-right: 4px solid var(--secondary);">
+                        <div
+                            style="display: flex; justify-content: space-between; margin-bottom: 16px; flex-direction: row-reverse;">
+                            <span class="label-bold"
+                                style="color: var(--outline); font-size: 10px; text-transform: uppercase;">Stav
+                                série</span>
+                            <span class="label-bold"
+                                style="background: var(--secondary); color: var(--on-secondary); padding: 2px 6px; border-radius: 4px; font-size: 10px;">ŽIVĚ</span>
+                        </div>
+                        <div class="team-row-new reverse">
+                            <div class="team-identity reverse">
+                                <div class="team-box" style="color: var(--secondary);">DET</div>
+                                <span class="label-bold" style="font-size: 12px;">DETROIT PISTONS</span>
+                            </div>
+                            <span class="stats-number" style="color: var(--secondary); font-size: 24px;">2</span>
+                        </div>
+                        <div style="height: 1px; background: rgba(255,255,255,0.05); margin: 8px 0;"></div>
+                        <div class="team-row-new reverse">
+                            <div class="team-identity reverse">
+                                <div class="team-box">CLE</div>
+                                <span class="label-bold" style="font-size: 12px;">CLE CAVALIERS</span>
+                            </div>
+                            <span class="stats-number" style="font-size: 24px;">1</span>
+                        </div>
+                    </div>
+
+                    <!-- Game 2 -->
+                    <div class="bracket-card-new" style="border-right: 4px solid var(--outline);">
+                        <div
+                            style="display: flex; justify-content: space-between; margin-bottom: 16px; flex-direction: row-reverse;">
+                            <span class="label-bold"
+                                style="color: var(--outline); font-size: 10px; text-transform: uppercase;">Stav
+                                série</span>
+                            <span class="label-bold"
+                                style="color: var(--on-surface-variant); font-size: 10px;">KONEC</span>
+                        </div>
+                        <div class="team-row-new reverse">
+                            <div class="team-identity reverse">
+                                <div class="team-box">NYK</div>
+                                <span class="label-bold" style="font-size: 12px;">NY KNICKS</span>
+                            </div>
+                            <span class="stats-number" style="font-size: 24px;">4</span>
+                        </div>
+                        <div style="height: 1px; background: rgba(255,255,255,0.05); margin: 8px 0;"></div>
+                        <div class="team-row-new reverse">
+                            <div class="team-identity reverse">
+                                <div class="team-box">PHI</div>
+                                <span class="label-bold" style="font-size: 12px;">PHI 67ERS</span>
+                            </div>
+                            <span class="stats-number" style="font-size: 24px;">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BENTO STATS -->
+        <div class="stats-bento container reveal">
+            <!-- Leaders -->
+            <div class="bracket-card-new" style="padding: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                    <h3 class="headline-md" style="font-size: 20px; font-style: italic;">LÍDŘI BODŮ</h3>
+                    <span class="material-symbols-outlined"
+                        style="color: var(--primary); font-size: 20px;">trending_up</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <div class="player-item">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 8px; height: 8px; background: var(--primary);"></div>
+                            <div>
+                                <p class="label-bold" style="font-size: 12px;">ANTHONY EDWARDS</p>
+                                <p style="font-size: 8px; color: var(--outline); text-transform: uppercase;">MINNESOTA
+                                    TIMBERWOLVES</p>
+                            </div>
+                        </div>
+                        <span class="stats-number" style="font-size: 20px;">31.2 <span
+                                style="font-size: 10px; color: var(--outline);">BPP</span></span>
+                    </div>
+                    <div class="player-item">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 8px; height: 8px; background: var(--secondary);"></div>
+                            <div>
+                                <p class="label-bold" style="font-size: 12px;">DONOVAN MITCHELL</p>
+                                <p style="font-size: 8px; color: var(--outline); text-transform: uppercase;">CLEVELAND
+                                    CAVALIERS</p>
+                            </div>
+                        </div>
+                        <span class="stats-number" style="font-size: 20px;">29.8 <span
+                                style="font-size: 10px; color: var(--outline);">BPP</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tickets -->
+            <div class="bracket-card-new"
+                style="display: flex; flex-direction: column; border-bottom: 4px solid var(--primary);">
+                <p class="label-bold" style="font-size: 10px; color: var(--outline); margin-bottom: 12px;">VSTUPENKY NA
+                    PLAYOFF</p>
+                <div
+                    style="flex: 1; position: relative; border-radius: 8px; overflow: hidden; min-height: 140px; margin-bottom: 12px;">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs0GWsOZluafGWrTvhF4cMd628tb6w9hQ8PEdAib8qAlwG3nGQ1N6NxCXx4a6-fhsubIxWMlGU6dDDTBL8M1RZFgGtO_Jguimt97ftv1DEKNA953E5PiKpBS_qKpKVovD0y8oVb3RpjseksfViuo8Pr2otRavkIuDCcK1nNlrkgQND4g4w9fijhIxR-TykJpVDeVw_b7_qj26dITHgfgPIbRsDyMh4HusO-mAxvmV1Gkbqqh23PEza2cgxhIkVVyMAP-L5IB1FM08"
+                        style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(0.4);">
+                    <div
+                        style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 12px;">
+                        <p class="headline-md" style="font-size: 18px; color: white;">ZAJISTĚTE SI MÍSTO</p>
+                    </div>
+                </div>
+                <button onclick="window.location.href='vstupenky.html'"
+                    style="border: 1px solid var(--primary); padding: 8px; font-size: 10px; font-weight: 700; color: var(--primary); cursor: pointer; border-radius: 4px; box-shadow: 0 0 10px rgba(170, 199, 255, 0.2);">KOUPIT
+                    NYNÍ</button>
+            </div>
+
+            <!-- Poll -->
+            <div class="bracket-card-new"
+                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div
+                    style="width: 48px; height: 48px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                    <span class="material-symbols-outlined"
+                        style="color: var(--secondary); opacity: 0.6;">verified</span>
+                </div>
+                <h3 class="headline-md" style="font-size: 20px; font-style: italic; margin-bottom: 8px;">OFICIÁLNÍ
+                    TIPOVAČKA</h3>
+                <p style="font-size: 10px; color: var(--outline); margin-bottom: 16px;">Přidejte se k 2M+ fanouškům a
+                    odešlete své predikce.</p>
+                <div class="sheared-accent"
+                    onclick="window.location.href='https://www.tipsport.cz/kurzy/basketbal/basketbal-muzi/nba-23'"
+                    style="background: var(--secondary-container); color: var(--on-secondary-container); padding: 8px 16px; font-size: 11px; font-weight: 700; cursor: pointer;">
+                    HRÁT NYNÍ</div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-wrap">
+            <div class="headline-md text-outline">NBA 2026</div>
+            <div class="footer-links">
+                <a href="" class="footer-link">OCHRANA SOUKROMÍ</a>
+                <a href="" class="footer-link">PODMÍNKY UŽITÍ</a>
+                <a href="" class="footer-link">MOŽNOSTI REKLAMY</a>
+                <a href="" class="footer-link">MAPA STRÁNEK</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 NBA PROPERTIES, INC. VŠECHNA PRÁVA VYHRAZENA.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

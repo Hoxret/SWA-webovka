@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA PLAYOFFS 2026 | CESTA DO FINÁLE</title>
+    <meta name="description"
+        content="Sledujte cestu za titulem v NBA Playoffs 2026. Rozpisy, výsledky a analýzy na jednom místě.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header fixed top-0 w-full glass-card"
+        style="border-radius: 0; border-top: 0; border-left: 0; border-right: 0;">
+        <div class="container">
+            <div class="logo">
+                NBA PLAYOFFS 2026
+            </div>
+
+            <nav class="hidden md-flex nav-links-wrapper">
+                <a href="index.html" class="nav-link active">Domů</a>
+                <a href="onas.html" class="nav-link">O nás</a>
+                <a href="playoffs.html" class="nav-link">Playoffs</a>
+                <a href="tymy.html" class="nav-link">Týmy</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="material-symbols-outlined"
+                    style="font-variation-settings: 'FILL' 0, 'wght' 400;">notifications</button>
+                <button class="material-symbols-outlined"
+                    style="font-variation-settings: 'FILL' 0, 'wght' 400;">account_circle</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ticker -->
+    <div class="ticker fixed top-20 w-full z-40">
+        <div class="animate-marquee h-full">
+            <div class="ticker-item">
+                <div class="live-badge flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-secondary pulse"></span>
+                    <span class="label-bold text-secondary">ŽIVĚ</span>
+                </div>
+                <span class="label-bold">BOS 112 - 108 MIA</span>
+                <span class="label-bold opacity-60 text-xs">4. čtvrtina 2:14</span>
+            </div>
+            <div class="ticker-item">
+                <span class="label-bold text-outline">KONEC</span>
+                <span class="label-bold">LAL 101 - 115 DEN</span>
+            </div>
+            <div class="ticker-item">
+                <span class="label-bold text-outline">02:00 SEČ</span>
+                <span class="label-bold">GSW vs DAL</span>
+            </div>
+            <div class="ticker-item">
+                <span class="label-bold text-outline">04:30 SEČ</span>
+                <span class="label-bold">PHX vs OKC</span>
+            </div>
+            <!-- Repeat -->
+            <div class="ticker-item">
+                <div class="live-badge flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-secondary pulse"></span>
+                    <span class="label-bold text-secondary">ŽIVĚ</span>
+                </div>
+                <span class="label-bold">BOS 112 - 108 MIA</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="mt-32">
+        <!-- Hero -->
+        <section class="hero px-gutter">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHXOMiP-7e3AYdTBhDaDPNv81VZ4hTmK9bAaj1LGW128j9YbFI0fecNy8TUslvsk2HBOzjrtrMIwLrep7uBhIrjZAtg2J8a89sDQEjE8czTb-Tm1-QzyVouaQq1et4DIa_RRqApNTtIpbtU-DlAWPKAQulEBsTFBbvCK458ZI8n4H2oEWVNpUWtWGGEgERWxeQTnnZHzFkNfAnWAUc-kG9tW_ec7LipPo7FCBpiWcOlLODLYj3cPrGVMPjhd47QOdj0qaJBouMK-0"
+                alt="NBA Arena" class="hero-img">
+            <div class="hero-overlay"></div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <span
+                        class="badge skew-edge bg-secondary text-on-secondary px-4 py-1 label-bold inline-block mb-4">PLAYOFFS
+                        2026</span>
+                    <h1 class="display-xl mb-6">
+                        CESTA DO <br> <span class="glow">FINÁLE</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Staňte se svědky střetu titánů, kdy elita ligy bojuje o basketbalovou nesmrtelnost. Vysoké
+                        sázky, špičkové výkony a honba za trofejí Larryho O'Briena začíná právě zde.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://www.nba.com/watch/featured" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary skew-edge" style="text-decoration: none;">SLEDOVAT ŽIVĚ</a>
+                        <a href="playoffs.html" class="btn btn-outline skew-edge" style="text-decoration: none;">CELÝ
+                            BRACKET</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section class="container mb-20 reveal">
+            <div class="section-title">
+                <div>
+                    <h2 class="headline-lg">ZÁPAS VEČERA</h2>
+                    <div class="divider"></div>
+                </div>
+                <a href="#" class="label-bold text-on-surface-variant hover:text-primary flex items-center gap-2">
+                    VŠECHNY ROZPISY <span class="material-symbols-outlined">chevron_right</span>
+                </a>
+            </div>
+
+            <div class="game-layout">
+                <!-- Main Game -->
+                <div class="main-game-card glass-card relative group">
+                    <div class="absolute top-0 right-0 p-6">
+                        <span class="bg-secondary text-on-secondary px-3 py-1 rounded label-bold">ŽIVĚ NA TNT</span>
+                    </div>
+
+                    <div class="game-header">
+                        <div class="team">
+                            <img src="https://logos-world.net/wp-content/uploads/2020/05/Boston-Celtics-logo.png"
+                                alt="Celtics">
+                            <h3 class="headline-md">CELTICS</h3>
+                            <p class="text-on-surface-variant label-bold">(2) 48-34</p>
+                        </div>
+
+                        <div class="score-area">
+                            <div class="score-wrap mb-4">
+                                <span class="score-main">112</span>
+                                <span class="score-sep">-</span>
+                                <span class="score-main text-secondary">108</span>
+                            </div>
+                            <div class="game-status-pill">
+                                <span class="label-bold">KONEC</span>
+                            </div>
+                        </div>
+
+                        <div class="team">
+                            <img src="https://th.bing.com/th/id/R.39ae03c66ceda979675987edd326dc06?rik=Zu9BJA1Yg07u%2fQ&pid=ImgRaw&r=0"
+                                alt="Heat">
+                            <h3 class="headline-md">HEAT</h3>
+                            <p class="text-on-surface-variant label-bold">(7) 40-42</p>
+                        </div>
+                    </div>
+
+                    <div class="game-stats-footer">
+                        <div class="stat-item">
+                            <p>Nejlepší střelec</p>
+                            <p>J. Tatum (34)</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>Doskoky</p>
+                            <p>B. Adebayo (14)</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>Asistence</p>
+                            <p>T. Herro (9)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar-layout flex flex-col gap-4">
+                    <div class="sidebar-card glass-card">
+                        <h4 class="headline-md text-secondary mb-4 italic">HLAVNÍ SOUBOJ</h4>
+                        <div class="matchup-item">
+                            <img src="https://i.pinimg.com/736x/95/44/8c/95448c2f4f158188337d973a4ad88eee.jpg"
+                                alt="Tatum">
+                            <div>
+                                <p class="label-bold">Jayson Tatum</p>
+                                <p class="text-xs text-on-surface-variant">SF | Celtics</p>
+                            </div>
+                            <div class="stat-group">
+                                <p class="val stats-number">34.2</p>
+                                <p class="unit">BPP</p>
+                            </div>
+                        </div>
+                        <div class="matchup-item">
+                            <img src="https://static0.thesportsterimages.com/wordpress/wp-content/uploads/2022/12/bam-adebayo.jpg"
+                                alt="Adebayo">
+                            <div>
+                                <p class="label-bold">Bam Adebayo</p>
+                                <p class="text-xs text-on-surface-variant">SF | Heat</p>
+                            </div>
+                            <div class="stat-group">
+                                <p class="val stats-number">28.5</p>
+                                <p class="unit">BPP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card glass-card bg-primary-container-alpha"
+                        style="background-color: rgba(0, 43, 92, 0.2);">
+                        <h4 class="headline-md text-primary mb-2 italic">ANKETA FANOUŠKŮ</h4>
+                        <p class="mb-4 text-sm">Kdo postoupí do konferenčního finále?</p>
+                        <div class="poll-item">
+                            <div class="poll-option">
+                                <div class="poll-fill bg-primary" style="width: 67%;"></div>
+                                <div class="poll-label">
+                                    <span class="label-bold">CELTICS</span>
+                                    <span class="stats-number">67%</span>
+                                </div>
+                            </div>
+                            <div class="poll-option">
+                                <div class="poll-fill bg-secondary" style="width: 33%;"></div>
+                                <div class="poll-label">
+                                    <span class="label-bold">HEAT</span>
+                                    <span class="stats-number">33%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Brackets -->
+        <section class="container reveal">
+            <div class="bracket-row">
+                <div class="bracket-box group">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFdSx18s_BK2LMOIsbbPntL168ibl2tlaoKr5dSNG6UxNb7H5MikwBAynFyrO7534fVK0Db8M5dVS9NHDVo4fkMNCpHlyDrOceT-YS_14yn6OS5yq2GpW3UhPKqiiYqymOo9UbO4PsstiW5PGUOefgs7fpZLA-fPJvrfNXk9tZd5upxLzz0RBly-8E_Nw--wf32VfkZJdSE4NZXRpwSS3ld9hDnHo6Qbc3HIrnD6AuUsCXdguIu6MlGa2JSlP6upfF7t1KXB03MJQ"
+                        alt="Eastern">
+                    <div class="bracket-box-overlay"></div>
+                    <div class="bracket-box-content">
+                        <h3 class="headline-lg">VÝCHODNÍ <br> <span class="text-primary">BRACKET</span></h3>
+                        <div class="flex gap-4 mt-4">
+                            <span class="label-bold bg-surface/60 px-3 py-1 rounded">8 TÝMŮ</span>
+                            <span class="label-bold bg-secondary text-on-secondary px-3 py-1 rounded">1. KOLO</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bracket-box group">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBij7Itc2ZIqxtL6sY7onwm1tUx-14XAoZRAVEaBrx_U8goOaFm3lfvbRa-U8dOpuxNziBZJ4mYoIK8BLjylXfhbJ6Cj6yclQqAF74FxWgXKjndcKr-0KIDiDPokgezBfqt9T3dtsxJ4PQ_sKNc1Qp-TIkS7lKjCb_KGhHlrJJen2TB6PO-Zi2P8mq9lp9TpA8ruwiQ1x3dwLXbfhl8Sbwg0eMyteH9DnHYlMikSknvDe2KVYVMWqOHhRU7eHN2jgWnFyb8CP9jLlk"
+                        alt="Western">
+                    <div class="bracket-box-overlay"></div>
+                    <div class="bracket-box-content">
+                        <h3 class="headline-lg">ZÁPADNÍ <br> <span class="text-secondary">BRACKET</span></h3>
+                        <div class="flex gap-4 mt-4">
+                            <span class="label-bold bg-surface/60 px-3 py-1 rounded">8 TÝMŮ</span>
+                            <span class="label-bold bg-primary text-on-primary px-3 py-1 rounded">1. KOLO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Bento -->
+        <section class="container mb-20 reveal">
+            <div class="section-title">
+                <div>
+                    <h2 class="headline-lg">NEJNOVĚJŠÍ Z PALUBOVKY</h2>
+                    <div class="divider" style="background: var(--primary);"></div>
+                </div>
+            </div>
+
+            <div class="bento-grid">
+                <article class="bento-main bento-item group">
+                    <img src="https://www.news10.com/wp-content/uploads/sites/64/2025/04/67f72bb1177e94.30752710.jpeg?w=1280&h=720&crop=1"
+                        alt="Luka">
+                    <div class="bento-main-overlay"></div>
+                    <div class="bento-main-content">
+                        <span class="text-primary label-bold mb-2 block">Bleskové zprávy</span>
+                        <h3 class="headline-md mb-2">BŘEZNOVÝ LUKA PO ROZVODU BYL NĚCO ÚPLNĚ JINÉHO</h3>
+                        <p class="text-on-surface-variant text-sm line-clamp-2">Superhvězda Lakers Luka Dončić hrál
+                            naprosto neuvěřitelně poté, co ho opustila manželka s dětmi.</p>
+                    </div>
+                </article>
+
+                <article class="bento-side bento-item glass-card border-secondary">
+                    <span class="text-secondary label-bold mb-2 block" style="font-size: 12px;">Analýza</span>
+                    <h4 class="label-bold text-lg mb-2">Jak hloubka lavičky Denveru převyšuje zbytek pole.</h4>
+                    <p class="text-on-surface-variant text-sm">Rozbor úseku 24-4 v podání náhradníků, který rozhodl 1.
+                        zápas.</p>
+                </article>
+
+                <article class="bento-side bento-item glass-card border-primary">
+                    <span class="text-primary label-bold mb-2 block" style="font-size: 12px;">Rozhovor</span>
+                    <h4 class="label-bold text-lg mb-2">Luka Dončić: "Ještě jsme neskončili."</h4>
+                    <p class="text-on-surface-variant text-sm">Exkluzivní pohled na defenzivní úpravy Lakers.</p>
+                </article>
+
+                <article class="bento-wide bento-item glass-card">
+                    <div class="thumb">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc6kjMRE6lr49MiPfHVwxAD31KXARWttqljAc2GFDJzTVix8m5oluyip2fL4yL51A8kLqY01d4pnwt8cpP0A4d3a3PPOweRt6ohBd7e4xRjka6S44iKPG1dUEj_Ut0L4eD69kOjaIzD4j5jKKuRnQCQaceadEIYM5yzQ3czsqCImQaO7ElqJG-AifZ_EkZ7oGEwCArFX39I4ffk-iTWptFiCczAKLHjYqrSGRvuBQQO8spKE-SFUMlforbwYnrMzU69XbvX5qzXzI"
+                            alt="Ball">
+                    </div>
+                    <div class="info">
+                        <span class="text-outline label-bold mb-1 block" style="font-size: 12px;">Preview série</span>
+                        <h4 class="headline-md">BITVA O ZÁPAD: SUNS VS OKLAHOMA</h4>
+                        <div class="flex items-center gap-2 mt-2">
+                            <span class="material-symbols-outlined text-primary">play_circle</span>
+                            <span class="label-bold text-xs">PŘEHRÁT NÁHLED</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-wrap">
+            <div class="headline-md text-outline">NBA 2026</div>
+            <div class="footer-links">
+                <a href="" class="footer-link">OCHRANA SOUKROMÍ</a>
+                <a href="" class=" footer-link">PODMÍNKY UŽITÍ</a>
+                <a href="" class="footer-link">MOŽNOSTI REKLAMY</a>
+                <a href="" class="footer-link">MAPA STRÁNEK</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 NBA PROPERTIES, INC. VŠECHNA PRÁVA VYHRAZENA.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

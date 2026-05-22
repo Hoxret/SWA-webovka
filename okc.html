@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAY-OFF NBA 2026 - Oklahoma City Thunder</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header fixed top-0 w-full glass-card"
+        style="border-radius: 0; border-top: 0; border-left: 0; border-right: 0; z-index: 100;">
+        <div class="container">
+            <div class="logo">
+                NBA PLAYOFFS 2026
+            </div>
+
+            <nav class="hidden md-flex nav-links-wrapper">
+                <a href="index.html" class="nav-link">Domů</a>
+                <a href="onas.html" class="nav-link">O nás</a>
+                <a href="playoffs.html" class="nav-link">Playoffs</a>
+                <a href="tymy.html" class="nav-link active">Týmy</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="material-symbols-outlined">search</button>
+                <button class="material-symbols-outlined">notifications</button>
+                <button class="material-symbols-outlined">account_circle</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="okc-hero">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpjC-KYXtGGj4_9230in7AkZ2ah7VCO8odQ4BGyPXFeFZueuCZ4dyW91SZ_-W3Mf2PK4mN6OWeTOivVNhGRmWghz3gkY3_EFzISBR7biR4Eky166PmTdVdY0gw9K30kvVyC9dwcLPzQz4Ce73HVJ9pm1bYRw9E-7oBsi3mo35ItmLyyt6_BnBgxnJQnAVm-2l1Ib_whMv1zFYM-bZmlQ1tgrfW1QPCAr1wnefidk_8xerh58_sZnlhAo-HVYcjN9ZTVB9Y0_CNaY4"
+                alt="OKC Arena" class="hero-img" style="opacity: 0.2;">
+            <div class="okc-hero-overlay"></div>
+
+            <div class="container relative" style="z-index: 10;">
+                <div class="flex flex-col md-flex-row items-end justify-between gap-8">
+                    <div class="md-w-2-3">
+                        <div class="okc-badge mb-4">
+                            <span class="w-2 h-2 rounded-full bg-white pulse"></span>
+                            <span class="label-bold" style="font-size: 10px;">1. NASAZENÝ TÝM ZÁPADNÍ KONFERENCE</span>
+                        </div>
+                        <h1 class="display-xl mb-4">OKLAHOMA CITY <br> <span class="text-okc-blue">THUNDER</span></h1>
+                        <p class="hero-desc" style="border-left-color: var(--okc-blue); max-width: 600px;">
+                            Nejmladší soupiska v historii play-off, která si zajistila první místo. Poháněni precizností, tempem a neúnavným vývojem jádra s mistrovským potenciálem.
+                        </p>
+                    </div>
+                    <div class="flex gap-12 mb-8">
+                        <div class="text-center">
+                            <p class="display-xl" style="font-size: 64px; line-height: 1;">57</p>
+                            <p class="label-bold text-okc-blue">VÝHER</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="display-xl" style="font-size: 64px; line-height: 1;">25</p>
+                            <p class="label-bold text-okc-orange">PROHER</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <section class="container py-12">
+            <div class="game-layout" style="grid-template-columns: 1fr; gap: 48px;">
+                <div class="flex flex-col md-flex-row gap-12">
+                    <!-- Left Column: Players -->
+                    <div class="md-w-2-3 flex flex-col gap-12">
+                        <!-- MVP Spotlight -->
+                        <div>
+                            <h2 class="headline-lg mb-8 flex items-center gap-4">
+                                <span class="w-12 h-1 bg-okc-blue"></span>
+                                FAVORIT NA MVP
+                            </h2>
+                            <div class="okc-player-spotlight">
+                                <div class="glass-card relative" style="padding: 32px; border-radius: 16px;">
+                                    <div class="absolute top-0 right-0 p-4">
+                                        <span class="display-xl opacity-10" style="font-size: 80px;">02</span>
+                                    </div>
+                                    <div class="relative z-10">
+                                        <p class="text-okc-orange label-bold mb-2">ROZEHRÁVAČ</p>
+                                        <h3 class="headline-md mb-6">SHAI GILGEOUS-ALEXANDER</h3>
+                                        <div class="okc-stat-box">
+                                            <span class="text-outline label-bold">BPP</span>
+                                            <span class="headline-md">30.1</span>
+                                        </div>
+                                        <div class="okc-stat-box">
+                                            <span class="text-outline label-bold">APP</span>
+                                            <span class="headline-md">6.2</span>
+                                        </div>
+                                        <div class="okc-stat-box">
+                                            <span class="text-outline label-bold">ZPP</span>
+                                            <span class="headline-md">2.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="glass-card overflow-hidden" style="border-radius: 16px; height: 320px;">
+                                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/ea5bee217630291.679387863efb7.png" 
+                                         alt="SGA" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Roster Section -->
+                        <div>
+                            <h2 class="headline-lg mb-8 flex items-center gap-4">
+                                <span class="w-12 h-1 bg-okc-orange"></span>
+                                SOUPISKA
+                            </h2>
+                            <div class="grid md-grid-3 gap-4">
+                                <div class="glass-card okc-roster-card">
+                                    <p class="label-bold text-outline mb-1">#7 | K/C</p>
+                                    <h3 class="headline-md mb-4">CHET HOLMGREN</h3>
+                                    <div class="flex gap-4">
+                                        <div>
+                                            <p class="text-outline" style="font-size: 10px;">BPP</p>
+                                            <p class="headline-md text-okc-blue">2.3</p>
+                                        </div>
+                                        <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+                                        <div>
+                                            <p class="text-outline" style="font-size: 10px;">DPP</p>
+                                            <p class="headline-md">7.9</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="glass-card okc-roster-card orange">
+                                    <p class="label-bold text-outline mb-1">#8 | K</p>
+                                    <h3 class="headline-md mb-4">JALEN WILLIAMS</h3>
+                                    <div class="flex gap-4">
+                                        <div>
+                                            <p class="text-outline" style="font-size: 10px;">BPP</p>
+                                            <p class="headline-md text-okc-orange">19.1</p>
+                                        </div>
+                                        <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+                                        <div>
+                                            <p class="text-outline" style="font-size: 10px;">% STŘ.</p>
+                                            <p class="headline-md">54.0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="glass-card okc-roster-card">
+                                    <p class="label-bold text-outline mb-1">#5 | R</p>
+                                    <h3 class="headline-md mb-4">LUGUENTZ DORT</h3>
+                                    <div class="flex gap-4">
+                                        <div>
+                                            <p class="text-outline" style="font-size: 10px;">% 3B</p>
+                                            <p class="headline-md text-okc-blue">39.4</p>
+                                        </div>
+                                        <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+                                        <div>
+                                            <p class="text-outline" style="font-size: 10px;">OBR</p>
+                                            <p class="headline-md">A+</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Sidebar -->
+                    <aside class="md-w-1-3 flex flex-col gap-8">
+                        <div class="glass-card okc-schedule-card">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="headline-md italic">NÁSLEDUJÍCÍ ZÁPASY</h3>
+                                <span class="material-symbols-outlined text-okc-blue">calendar_month</span>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <div class="glass-card" style="padding: 16px; background: rgba(255,255,255,0.03);">
+                                    <div class="flex justify-between mb-4">
+                                        <span class="label-bold text-outline" style="font-size: 10px;">ČTVRTFINÁLE ZÁPADU | 1. ZÁPAS</span>
+                                        <span class="text-okc-blue label-bold" style="font-size: 10px;">DOMA</span>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-4">
+                                        <div class="text-center">
+                                            <p class="headline-md">OKC</p>
+                                            <p class="label-bold opacity-60" style="font-size: 8px;">THUNDER</p>
+                                        </div>
+                                        <p class="text-okc-orange headline-md">VS</p>
+                                        <div class="text-center">
+                                            <p class="headline-md">NOP</p>
+                                            <p class="label-bold opacity-60" style="font-size: 8px;">PELICANS</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center pt-4 border-top">
+                                        <p class="label-bold">NE, 21. DUBNA</p>
+                                        <p class="text-okc-blue label-bold">2:30 SEČ</p>
+                                    </div>
+                                </div>
+                                <div class="glass-card" style="padding: 16px; background: rgba(255,255,255,0.03);">
+                                    <div class="flex justify-between mb-4">
+                                        <span class="label-bold text-outline" style="font-size: 10px;">ČTVRTFINÁLE ZÁPADU | 2. ZÁPAS</span>
+                                        <span class="text-okc-blue label-bold" style="font-size: 10px;">DOMA</span>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-4">
+                                        <div class="text-center">
+                                            <p class="headline-md">OKC</p>
+                                            <p class="label-bold opacity-60" style="font-size: 8px;">THUNDER</p>
+                                        </div>
+                                        <p class="text-okc-orange headline-md">VS</p>
+                                        <div class="text-center">
+                                            <p class="headline-md">NOP</p>
+                                            <p class="label-bold opacity-60" style="font-size: 8px;">PELICANS</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center pt-4 border-top">
+                                        <p class="label-bold">ST, 24. DUBNA</p>
+                                        <p class="text-okc-blue label-bold">3:30 SEČ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="vstupenky.html" class="btn bg-okc-blue text-white label-bold w-full mt-6" style="padding: 12px; border-radius: 4px; text-align: center; text-decoration: none; display: block;">VSTUPENKY NA SÉRII</a>
+
+                        </div>
+
+                        <div class="glass-card okc-stats-card">
+                            <h3 class="headline-md mb-6">TÝMOVÉ STATISTIKY</h3>
+                            <div class="flex flex-col gap-6">
+                                <div>
+                                    <div class="flex justify-between label-bold mb-2">
+                                        <span>ÚTOČNÝ RATING</span>
+                                        <span class="text-okc-blue">#3 V NBA</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="fill" style="width: 92%; background: var(--okc-blue);"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between label-bold mb-2">
+                                        <span>OBRANNÝ RATING</span>
+                                        <span class="text-okc-orange">#4 V NBA</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="fill" style="width: 88%; background: var(--okc-orange);"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between label-bold mb-2">
+                                        <span>NET RATING</span>
+                                        <span class="text-okc-blue">+7.3</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="fill" style="width: 95%; background: var(--okc-blue);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-wrap">
+            <div class="headline-md text-outline">NBA 2026</div>
+            <div class="footer-links">
+                <a href="" class="footer-link">OCHRANA SOUKROMÍ</a>
+                <a href="" class="footer-link">PODMÍNKY UŽITÍ</a>
+                <a href="" class="footer-link">MOŽNOSTI REKLAMY</a>
+                <a href="" class="footer-link">MAPA STRÁNEK</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 NBA PROPERTIES, INC. VŠECHNA PRÁVA VYHRAZENA.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+</body>
+
+</html>
